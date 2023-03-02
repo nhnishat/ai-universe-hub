@@ -4,10 +4,18 @@ const loadTools = async () => {
 	const data = await res.json();
 	displayTools(data.data.tools);
 };
-const displayTools = (data) => {
-	console.log(data);
+const displayTools = (tools) => {
+	console.log(tools);
 	const toolsContainer = document.getElementById('tools-container');
-	data.forEach((tool) => {
+	// show All
+	const showAll = document.getElementById('show-all');
+	if (tools.length > 6) {
+		tools = tools.slice(0, 6);
+		showAll.classList.remove('d-none');
+	} else {
+		showAll.classList.add('d-none');
+	}
+	tools.forEach((tool) => {
 		console.log(tool);
 		const toolsDiv = document.createElement('div');
 		toolsDiv.classList.add('col');

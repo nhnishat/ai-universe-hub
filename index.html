@@ -19,12 +19,19 @@
 	</head>
 	<body>
 		<header>
-			<h1 class="my-5 fs-2 d-flex align-items-center justify-content-center">
-				AI Universe Hub
-			</h1>
+			<h1 class="my-5 fs-1 text-center">AI Universe Hub</h1>
 		</header>
 		<main class="container-fluid">
-			<div id="tools-container" class="row row-cols-1 row-cols-md-3 g-4"></div>
+			<section>
+				<div
+					id="tools-container"
+					class="row row-cols-1 row-cols-md-3 g-4"
+				></div>
+				<!-- Show all Button -->
+				<div id="show-all" class="text-center my-4 d-none">
+					<button id="btn-show-all" class="btn btn-danger">Show All</button>
+				</div>
+			</section>
 		</main>
 		<!-- script added -->
 		<script
