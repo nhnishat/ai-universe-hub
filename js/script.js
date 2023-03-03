@@ -51,6 +51,13 @@ const loadToolsDetails = async (id) => {
 	const data = await res.json();
 	displayToolsDetails(data.data);
 };
+const displayToolsDetails = (tool) => {
+	console.log(tool);
+	const image = document.getElementById('modal-img');
+	image.innerHTML = `
+	<img src="${tool.image_link[0]}" class="img-fluid h-100" alt="">
+	`;
+};
 // Slice section
 const aiUniverse = async () => {
 	const url = 'https://openapi.programming-hero.com/api/ai/tools';

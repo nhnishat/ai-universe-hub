@@ -45,13 +45,37 @@
 					aria-labelledby="toolsDetailsModalLabel"
 					aria-hidden="true"
 				>
-					<div class="modal-dialog modal-lg">
-						<button
-							type="button"
-							class="btn-close"
-							data-bs-dismiss="modal"
-							aria-label="Close"
-						></button>
+					<div id="modal-container" class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button
+									type="button"
+									class="btn-close"
+									data-bs-dismiss="modal"
+									aria-label="Close"
+								></button>
+							</div>
+							<div class="modal-body">
+								<div
+									id="tools-container"
+									class="row row-cols-1 row-cols-md-2 g-4"
+								>
+									<div class="col">
+										<div class="card h-100 rounded-4 p-3 bg-danger-subtle">
+											<h5 id="card des"></h5>
+										</div>
+										<div id="card-content-section"></div>
+									</div>
+									<div class="col">
+										<div class="card h-100 rounded-4 p-3">
+											<div id="modal-img"></div>
+											<div id="accuracy "></div>
+										</div>
+										<div id="modal-img-description"></div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
