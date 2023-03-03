@@ -42,6 +42,8 @@ const displayTools = (tools) => {
         `;
 		toolsContainer.appendChild(toolsDiv);
 	});
+	// Stop Loader
+	toggleSpinner(false);
 };
 // Modal
 const loadToolsDetails = async (id) => {
@@ -85,9 +87,18 @@ const aiUniverseAll = async () => {
 	displayTools(data.data.tools);
 };
 document.getElementById('btn-show-all').addEventListener('click', function () {
+	toggleSpinner(true);
 	aiUniverseAll();
 	const btnShow = document.getElementById('show-all');
 	btnShow.classList.add('d-none');
 });
-
+// spinner section
+const toggleSpinner = (isLoading) => {
+	const loaderSection = document.getElementById('loader-section');
+	if (isLoading) {
+		loaderSection.classList.remove('d-none');
+	} else {
+		loaderSection.classList.add('d-none');
+	}
+};
 // aiUniverse();
