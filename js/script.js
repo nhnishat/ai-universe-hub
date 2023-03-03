@@ -54,6 +54,28 @@ const loadToolsDetails = async (id) => {
 };
 const displayToolsDetails = (tool) => {
 	console.log(tool);
+	const cardDescription = document.getElementById('card-description');
+	cardDescription.innerHTML = `
+${tool.description}
+`;
+	const cardContentSection = document.getElementById('card-content-section');
+	cardContentSection.innerHTML = `
+	<div class="d-flex justify-content-between align-items-center my-5">
+		<div class="  text-center rounded text-success fw-bold fs-4"> 
+			<p>${tool.pricing[0].plan}</br>
+			${tool.pricing[0].price}</p>
+		</div>
+		<div class="  text-center rounded  text-warning fw-bold fs-4">
+			<p>${tool.pricing[1].plan} </br>
+			${tool.pricing[1].price} </p>
+		</div>
+		<div class="  text-center rounded text-danger fw-bold fs-5">
+			<p>${tool.pricing[2].plan} </br>
+			${tool.pricing[2].price} </p>
+		</div>
+	</div>
+	`;
+
 	const accuracyShow = document.getElementById('accuracy-show');
 	accuracyShow.innerHTML = `
 	${tool.accuracy.score * 100 > 0 ? tool.accuracy.score * 100 : 'No'}% accuracy
@@ -65,7 +87,7 @@ const displayToolsDetails = (tool) => {
 
 	const modalTextInput = document.getElementById('modal-text-input');
 	modalTextInput.innerHTML = `
-	</h3>${tool.input_output_examples[1].input} </h3>
+	<h3>${tool.input_output_examples[1].input} </h3>
 	`;
 	const modalTextOutput = document.getElementById('modal-text-output');
 	modalTextOutput.innerHTML = `
@@ -101,4 +123,4 @@ const toggleSpinner = (isLoading) => {
 		loaderSection.classList.add('d-none');
 	}
 };
-// aiUniverse();
+aiUniverse();
