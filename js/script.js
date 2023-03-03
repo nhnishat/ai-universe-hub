@@ -7,31 +7,24 @@ const loadTools = async () => {
 const displayTools = (tools) => {
 	console.log(tools);
 	const toolsContainer = document.getElementById('tools-container');
-	// show All
-	const showAll = document.getElementById('show-all');
-	if (tools.length > 6) {
-		tools = tools.slice(0, 6);
-		showAll.classList.remove('d-none');
-	} else {
-		showAll.classList.add('d-none');
-	}
+	toolsContainer.innerHTML = '';
 	tools.forEach((tool) => {
-		console.log(tool);
+		// console.log(tool);
 		const toolsDiv = document.createElement('div');
 		toolsDiv.classList.add('col');
 		toolsDiv.innerHTML = `
         <div class="card h-100">
-            <img src="${tool.image}" class="card-img-top " alt="..." />
+            <img src="${tool.image}" class="card-img-fluid h-100" alt="..." />
             <div class="card-body">
                 <h5 class="card-title fs-2">Features</h5>
                 <p class="card-text">
                     1. ${tool.features[0]}
                 </p>
                 <p class="card-text">
-                    1. ${tool.features[2]}
+                    2. ${tool.features[1]}
                 </p>
                 <p class="card-text">
-                    1. ${tool.features[3]}
+                    3. ${tool.features[2]}
                 </p>
             </div>
             <hr>
@@ -49,5 +42,23 @@ const displayTools = (tools) => {
 		toolsContainer.appendChild(toolsDiv);
 	});
 };
+// Slice section
+const aiUniverse = async () => {
+	const url = 'https://openapi.programming-hero.com/api/ai/tools';
+	const res = await fetch(url);
+	const data = await res.json();
+	displayTools(data.data.tools.slice(0, 6));
+};
 
-loadTools();
+const aiUniverseAll = async () => {
+	const url = 'https://openapi.programming-hero.com/api/ai/tools';
+	const res = await fetch(url);
+	const data = await res.json();
+	displayTools(data.data.tools);
+};
+document.getElementById('btn-show-all').addEventListener('click', function () {
+	aiUniverseAll();
+	const btnShow = document.getElementById('show-all');
+	btnShow.classList.add('d-none');
+});
+aiUniverse();
