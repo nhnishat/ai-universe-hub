@@ -56,8 +56,8 @@ const displayToolsDetails = (tool) => {
 	console.log(tool);
 	const cardDescription = document.getElementById('card-description');
 	cardDescription.innerHTML = `
-${tool.description}
-`;
+	${tool.description}
+	`;
 	const cardContentSection = document.getElementById('card-content-section');
 	cardContentSection.innerHTML = `
 	<div class="d-flex justify-content-between align-items-center my-5">
@@ -75,7 +75,30 @@ ${tool.description}
 		</div>
 	</div>
 	`;
-
+	const featuresIntegrationsSection = document.getElementById(
+		'features-integrations-section'
+	);
+	featuresIntegrationsSection.innerHTML = `
+	<div class="d-flex justify-content-between align-items-center">
+		<div>
+			<h5 class="card-title fs-2 fw-semibold">Features</h5>
+			<ul>
+				<li>${tool.features.feature_name}</li>
+				
+			</ul>
+			</div>
+			<div>
+			<h5 class="card-title fs-2 fw-semibold">Integrations</h5>
+			<ul>
+				<li>${tool.integrations[0]}</li>
+				<li>${tool.integrations[1]}</li>
+				<li>${tool.integrations[2]}</li>
+				<li>${tool.integrations[3]}</li>
+				<li>${tool.integrations[4]}</li>
+			</ul>
+		</div>
+	</div>
+	`;
 	const accuracyShow = document.getElementById('accuracy-show');
 	accuracyShow.innerHTML = `
 	${tool.accuracy.score * 100 > 0 ? tool.accuracy.score * 100 : 'No'}% accuracy
