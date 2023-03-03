@@ -19,7 +19,7 @@
 	</head>
 	<body class="container">
 		<header>
-			<h1 class="my-5 fs-1 text-center">AI Universe Hub</h1>
+			<h1 class="my-5 fs-1 text-center fw-bold">AI Universe Hub</h1>
 			<div id="" class="text-center my-5">
 				<button id="sort-btn" class="btn btn-danger">Sort By Date</button>
 			</div>
@@ -33,6 +33,17 @@
 				<!-- Show all Button -->
 				<div id="show-all" class="text-center my-5">
 					<button id="btn-show-all" class="btn btn-primary">See More</button>
+				</div>
+			</section>
+			<!-- spinner Added  -->
+			<section>
+				<div
+					style="height: 400px"
+					class="d-flex justify-content-center align-items-center"
+				>
+					<div class="spinner-border" role="status">
+						<span class="visually-hidden text-success">Loading...</span>
+					</div>
 				</div>
 			</section>
 			<!-- modal -->
@@ -68,10 +79,19 @@
 									</div>
 									<div class="col">
 										<div class="card h-100 rounded-4 p-3">
-											<div id="modal-img"></div>
-											<div id="accuracy "></div>
+											<div class="position-relative">
+												<button
+													id="accuracy-show"
+													class="btn btn-danger position-absolute me-{-20px} mx-0"
+												></button>
+												<div id="modal-img"></div>
+											</div>
+											<div
+												id="modal-text-input"
+												class="fs-3 mb-2 fw-bold"
+											></div>
+											<div id="modal-text-output" class="fs-6 fw-normal"></div>
 										</div>
-										<div id="modal-img-description"></div>
 									</div>
 								</div>
 							</div>
