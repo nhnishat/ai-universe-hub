@@ -38,10 +38,10 @@ const displayTools = (tools) => {
 										}</p>
                 </div>
                 <div>
-				<button class="border-0 p-2 bg-white rounded" >
+				<button class="border-0 p-1 bg-white rounded" >
                     <i onclick="loadToolsDetails('${
 											tool.id
-										}')" class="fa-regular fa-circle-right fs-2 text-danger " data-bs-target="#toolsDetailsModal"data-bs-toggle="modal" data-bs-target="#toolsDetailsModal"></i>
+										}')" class="fa-regular fa-circle-right fs-2 btn btn-success " data-bs-target="#toolsDetailsModal"data-bs-toggle="modal" data-bs-target="#toolsDetailsModal"></i>
 										</button>
                 </div>
             </div>
