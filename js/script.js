@@ -79,23 +79,38 @@ const displayToolsDetails = (tool) => {
 		'features-integrations-section'
 	);
 	featuresIntegrationsSection.innerHTML = `
-	<div class="d-flex justify-content-between align-items-center">
+	<div class="d-flex justify-content-between align-items-center g-5">
 		<div>
 			<h5 class="card-title fs-2 fw-semibold">Features</h5>
 			<ul>
-				<li>${tool.features.feature_name}</li>
-				
+				<li class="mt-4 mb-2">${tool.features[1].feature_name}</li>		
+				</ul>
+				<ul>
+				<li class="my-2">${tool.features[2].feature_name}</li>		
+				</ul>
+				<ul>
+				<li class="my-2">${tool.features[3].feature_name}</li>		
 			</ul>
-			</div>
+		</div>
 			<div>
-			<h5 class="card-title fs-2 fw-semibold">Integrations</h5>
-			<ul>
-				<li>${tool.integrations[0]}</li>
-				<li>${tool.integrations[1]}</li>
-				<li>${tool.integrations[2]}</li>
-				<li>${tool.integrations[3]}</li>
-				<li>${tool.integrations[4]}</li>
-			</ul>
+				<h5 class="card-title fs-2 fw-semibold">Integrations</h5>
+				<ul>
+					<li class="my-2">${
+						tool.integrations[0] ? tool.integrations[0] : 'No Data found'
+					}</li>
+					<li class="my-2"> ${
+						tool.integrations[1] ? tool.integrations[1] : 'No Data found'
+					}</li>
+					<li class="my-2">${
+						tool.integrations[2] ? tool.integrations[2] : 'No Data found'
+					}</li>
+					<li class="my-2">${
+						tool.integrations[3] ? tool.integrations[3] : 'No Data found'
+					}</li>
+					<li class="my-2">${
+						tool.integrations[4] ? tool.integrations[4] : 'No Data found'
+					}</li>
+				</ul>
 		</div>
 	</div>
 	`;
